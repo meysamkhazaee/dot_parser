@@ -1,0 +1,28 @@
+2024-07-27 00:04:31,632 - DEBUG - File path: d:\work\codes\dot_parser\input\sample.dot
+2024-07-27 00:04:35,689 - INFO - Original graph saved to: d:\work\codes\dot_parser\result\sample.png
+2024-07-27 00:04:35,705 - DEBUG - The initial number of nodes: 59
+2024-07-27 00:04:35,705 - DEBUG - The number of deleted nodes: 40
+2024-07-27 00:04:35,705 - DEBUG - The number of inserted nodes: 20
+2024-07-27 00:04:35,705 - DEBUG - The initial number of nodes: 8
+2024-07-27 00:04:35,705 - DEBUG - The number of deleted nodes: 6
+2024-07-27 00:04:35,705 - DEBUG - The number of inserted nodes: 3
+2024-07-27 00:04:35,705 - DEBUG - The initial number of nodes: 7
+2024-07-27 00:04:35,705 - DEBUG - The number of deleted nodes: 6
+2024-07-27 00:04:35,705 - DEBUG - The number of inserted nodes: 3
+2024-07-27 00:04:35,705 - DEBUG - The initial number of nodes: 1
+2024-07-27 00:04:35,705 - DEBUG - The number of deleted nodes: 0
+2024-07-27 00:04:35,705 - DEBUG - The number of inserted nodes: 0
+2024-07-27 00:04:35,705 - DEBUG - The initial number of nodes: 1
+2024-07-27 00:04:35,705 - DEBUG - The number of deleted nodes: 0
+2024-07-27 00:04:35,705 - DEBUG - The number of inserted nodes: 0
+2024-07-27 00:04:35,705 - DEBUG - The initial number of nodes: 1
+2024-07-27 00:04:35,705 - DEBUG - The number of deleted nodes: 0
+2024-07-27 00:04:35,705 - DEBUG - The number of inserted nodes: 0
+2024-07-27 00:04:35,705 - DEBUG - The initial number of nodes: 1
+2024-07-27 00:04:35,705 - DEBUG - The number of deleted nodes: 0
+2024-07-27 00:04:35,705 - DEBUG - The number of inserted nodes: 0
+2024-07-27 00:04:35,705 - DEBUG - The initial number of nodes: 24
+2024-07-27 00:04:35,705 - DEBUG - The number of deleted nodes: 2
+2024-07-27 00:04:35,705 - DEBUG - The number of inserted nodes: 1
+2024-07-27 00:04:36,084 - INFO - Updated graph saved to: d:\work\codes\dot_parser\result\sample_updated.png
+2024-07-27 00:04:36,095 - INFO - Updated DOT file saved to: d:\work\codes\dot_parser\result\sample_updated.dot

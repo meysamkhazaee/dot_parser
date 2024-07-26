@@ -24,7 +24,9 @@ def setup_logger(infile_name):
 def process_graph(graph, logger):
     subgraphs = graph.get_subgraphs()
     for subgraph in subgraphs:
+       logger.info(f"proccessing {subgraph.get_label()} subgraph ...")
        combine_consecutive_nodes(subgraph, logger)
+    logger.info(f"proccessing root graph ...")
     combine_consecutive_nodes(graph, logger)
 
 # def edge_exists(graph, source, destination):
@@ -36,12 +38,11 @@ def process_graph(graph, logger):
 # Function to combine consecutive nodes
 def combine_consecutive_nodes(graph, logger):
 
-    nodes = graph.get_nodes()
     edges = graph.get_edges()
 
     visited  = []
 
-    if len(nodes) == 0:
+    if len(graph.get_nodes()) == 0:
 
         for e in edges:
 
@@ -53,13 +54,12 @@ def combine_consecutive_nodes(graph, logger):
                 graph.add_node(pydot.Node(e.get_destination()))
                 visited.append(e.get_destination())
 
-    nodes = graph.get_nodes()
-    logger.debug(f"The initial number of nodes: {len(nodes)}")
+    logger.debug(f"The initial number of nodes: {len(graph.get_nodes())}")
     
     deleted_node = 0
     inserted_node = 0
 
-    for node in nodes:
+    for node in graph.get_nodes():
 
         node_name = node.get_name()
         dst_of_node = [e.get_destination() for e in edges if e.get_source() == node_name]
@@ -80,11 +80,43 @@ def combine_consecutive_nodes(graph, logger):
                 continue
 
             new_node_name = src_of_node[0] + "_" + node_name
-            source_node = [n for n in nodes if n.get_name() == src_of_node[0]]
+            source_node = [n for n in graph.get_nodes() if n.get_name() == src_of_node[0]]
             node_content = f"{source_node[0].get_label()}\n{node.get_label()}".replace('"', '')
-            new_node = pydot.Node(new_node_name, label=node_content)
+            new_node = pydot.Node(new_node_name, label=node_content, shape='Mrecord' ,fontsize=22 ,color='red')
             graph.add_node(new_node)
-            nodes.append(new_node)
+            inserted_node += 1
+            graph.add_edge(pydot.Edge(new_node, dst_of_node[0]))
+
+            for e in edges:
+                if e.get_destination() == src_of_node[0]:
+                    graph.add_edge(pydot.Edge(e.get_source(), new_node))
+                    graph.del_edge(e.get_source(), e.get_destination())
+                elif e.get_source() == src_of_node[0]:
+                    graph.del_edge(e.get_source(), e.get_destination())
+                elif e.get_destination() == dst_of_node[0]:
+                    graph.del_edge(e.get_source(), e.get_destination())
+                
+            graph.del_node(node_name)
+            graph.del_node(src_of_node[0])
+            deleted_node += 2
+
+            # if edge_exists(graph,  src_of_node[0] ,dst_of_node[0]):# handle loops
+            #     continue
+            nodes_name = [node_obj.get_name() for node_obj in graph.get_nodes()]
+            if src_of_node[0] not in nodes_name or dst_of_node[0] not in nodes_name:
+                continue
+
+            # Combine the nodes
+            child_of_src = [e.get_source() for e in edges if e.get_source() == src_of_node[0]]
+
+            if len(child_of_src) != 1:
+                continue
+
+            new_node_name = src_of_node[0] + "_" + node_name
+            source_node = [n for n in graph.get_nodes() if n.get_name() == src_of_node[0]]
+            node_content = f"{source_node[0].get_label()}\n{node.get_label()}".replace('"', '')
+            new_node = pydot.Node(new_node_name, label=node_content, shape='Mrecord' ,fontsize=22 ,color='red')
+            graph.add_node(new_node)
             inserted_node += 1
             graph.add_edge(pydot.Edge(new_node, dst_of_node[0]))
 
