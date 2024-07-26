@@ -1,0 +1,10 @@
+2024-07-26 23:56:30,915 - DEBUG - File path: d:\work\codes\dot_parser\input\1.dot
+2024-07-26 23:56:31,549 - INFO - Original graph saved to: d:\work\codes\dot_parser\result\1.png
+2024-07-26 23:56:31,564 - DEBUG - The initial number of nodes: 3
+2024-07-26 23:56:31,564 - DEBUG - The number of deleted nodes: 2
+2024-07-26 23:56:31,564 - DEBUG - The number of inserted nodes: 1
+2024-07-26 23:56:31,564 - DEBUG - The initial number of nodes: 4
+2024-07-26 23:56:31,564 - DEBUG - The number of deleted nodes: 2
+2024-07-26 23:56:31,564 - DEBUG - The number of inserted nodes: 1
+2024-07-26 23:56:31,757 - INFO - Updated graph saved to: d:\work\codes\dot_parser\result\1_updated.png
+2024-07-26 23:56:31,757 - INFO - Updated DOT file saved to: d:\work\codes\dot_parser\result\1_updated.dot

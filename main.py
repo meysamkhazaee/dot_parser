@@ -2,44 +2,92 @@ import pydot
 from IPython.display import Image, display
 import os
 import sys
-import time
+import logging
+
+def setup_logger(infile_name):
+
+    """Sets up logging for the given input file."""
+    logger = logging.getLogger(infile_name)
+    logger.setLevel(logging.DEBUG)
+    
+    # Ensure the result directory exists
+    result_dir = os.path.join(os.path.dirname(__file__), "result")
+    if not os.path.exists(result_dir):
+        os.makedirs(result_dir)
+
+    handler = logging.FileHandler(filename=f"result/{infile_name}.log", mode='w')
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    return logger
+
+def process_graph(graph, logger):
+    subgraphs = graph.get_subgraphs()
+    for subgraph in subgraphs:
+       combine_consecutive_nodes(subgraph, logger)
+    combine_consecutive_nodes(graph, logger)
+
+# def edge_exists(graph, source, destination):
+#     for edge in graph.get_edges():
+#         if (edge.get_source() == source and edge.get_destination() == destination) or (edge.get_source() == destination and edge.get_destination() == source):
+#             return True
+#     return False
 
 # Function to combine consecutive nodes
-def combine_consecutive_nodes(graph):
-    nodes_to_remove = set()
-    new_edges = []
-    node_map = {}  # To keep track of combined nodes
-    
+def combine_consecutive_nodes(graph, logger):
+
     nodes = graph.get_nodes()
     edges = graph.get_edges()
 
     visited  = []
+
     if len(nodes) == 0:
+
         for e in edges:
+
             if e.get_source() not in visited:
                 graph.add_node(pydot.Node(e.get_source()))
                 visited.append(e.get_source())
+
             if e.get_destination() not in visited:
-                graph.add_node(pydot.Node(e.get_source()))
-                visited.append(e.get_source())
+                graph.add_node(pydot.Node(e.get_destination()))
+                visited.append(e.get_destination())
 
     nodes = graph.get_nodes()
+    logger.debug(f"The initial number of nodes: {len(nodes)}")
+    
+    deleted_node = 0
+    inserted_node = 0
+
     for node in nodes:
+
         node_name = node.get_name()
         dst_of_node = [e.get_destination() for e in edges if e.get_source() == node_name]
         src_of_node = [e.get_source() for e in edges if e.get_destination() == node_name]
         
         if len(dst_of_node) == 1 and len(src_of_node) == 1:
+
+            # if edge_exists(graph,  src_of_node[0] ,dst_of_node[0]):# handle loops
+            #     continue
+            nodes_name = [node_obj.get_name() for node_obj in graph.get_nodes()]
+            if src_of_node[0] not in nodes_name or dst_of_node[0] not in nodes_name:
+                continue
+
             # Combine the nodes
             child_of_src = [e.get_source() for e in edges if e.get_source() == src_of_node[0]]
+
             if len(child_of_src) != 1:
                 continue
+
             new_node_name = src_of_node[0] + "_" + node_name
             source_node = [n for n in nodes if n.get_name() == src_of_node[0]]
             node_content = f"{source_node[0].get_label()}\n{node.get_label()}".replace('"', '')
             new_node = pydot.Node(new_node_name, label=node_content)
             graph.add_node(new_node)
+            nodes.append(new_node)
+            inserted_node += 1
             graph.add_edge(pydot.Edge(new_node, dst_of_node[0]))
+
             for e in edges:
                 if e.get_destination() == src_of_node[0]:
                     graph.add_edge(pydot.Edge(e.get_source(), new_node))
@@ -51,9 +99,10 @@ def combine_consecutive_nodes(graph):
                 
             graph.del_node(node_name)
             graph.del_node(src_of_node[0])
+            deleted_node += 2
 
-    
-    return graph
+    logger.debug(f"The number of deleted nodes: {deleted_node}")
+    logger.debug(f"The number of inserted nodes: {inserted_node}")
 
 def main():
     
@@ -69,33 +118,17 @@ def main():
     full_path = os.path.normpath(full_path)
     file_name, file_ext = os.path.splitext(full_path)
     file_name = os.path.basename(file_name)
-    
+
+    logger = setup_logger(file_name)
+    logger.debug(f"File path: {full_path}")
+     
     # Load the DOT file
     graphs = pydot.graph_from_dot_file(full_path)
     if not graphs:
-        print("Failed to load the DOT file.")
+        logger.error("Failed to load the DOT file.")
         return
 
     graph = graphs[0]
-
-    # if not os.path.exists(os.path.join(root, "result")):
-    #     os.makedirs(os.path.join(root, "result"))
-    
-    # # Save the graph as a PNG file
-    # graph.write_png(f'result/{file_name}.png')
-
-    # # Display the base graph image
-    # display(Image(filename=f'result/{file_name}.png'))
-
-    # # Combine consecutive nodes
-    # graph = combine_consecutive_nodes(graph)
-    
-    # # Save the updated graph as a PNG file
-    # graph.write_png(f'result/{file_name}_updated.png')
-
-    # # Display the updated graph image
-    # image_path = f'result/{file_name}_updated.png'
-    # display(Image(filename=image_path))
 
     # Ensure the result directory exists
     result_dir = os.path.join(os.path.dirname(__file__), "result")
@@ -105,23 +138,29 @@ def main():
     # Save the original graph as a PNG file
     original_png_path = os.path.join(result_dir, f'{file_name}.png')
     graph.write_png(original_png_path)
+    
+    logger.info(f"Original graph saved to: {original_png_path}")
 
     # Display the original graph image
     display(Image(filename=original_png_path))
 
-    # Combine consecutive nodes
-    graph = combine_consecutive_nodes(graph)
+    # Process input graph
+    process_graph(graph, logger)
     
     # Save the updated graph as a PNG file
     updated_png_path = os.path.join(result_dir, f'{file_name}_updated.png')
     graph.write_png(updated_png_path)
+    
+    logger.info(f"Updated graph saved to: {updated_png_path}")
 
     # Save the updated graph as a DOT file
     updated_dot_path = os.path.join(result_dir, f'{file_name}_updated.dot')
     graph.write_raw(updated_dot_path)
+    
+    logger.info(f"Updated DOT file saved to: {updated_dot_path}")
 
     # Display the updated graph image
     display(Image(filename=updated_png_path))
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
