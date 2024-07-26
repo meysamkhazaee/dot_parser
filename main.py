@@ -29,12 +29,6 @@ def process_graph(graph, logger):
     logger.info(f"proccessing root graph ...")
     combine_consecutive_nodes(graph, logger)
 
-# def edge_exists(graph, source, destination):
-#     for edge in graph.get_edges():
-#         if (edge.get_source() == source and edge.get_destination() == destination) or (edge.get_source() == destination and edge.get_destination() == source):
-#             return True
-#     return False
-
 # Function to combine consecutive nodes
 def combine_consecutive_nodes(graph, logger):
 
