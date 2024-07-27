@@ -1,8 +1,16 @@
-2024-07-27 00:57:09,103 - DEBUG - File path: d:\work\codes\dot_parser\input\1.dot
-2024-07-27 00:57:09,712 - INFO - Original graph saved to: d:\work\codes\dot_parser\result\1.png
-2024-07-27 00:57:09,728 - INFO - proccessing "sub_graph_1" subgraph ...
-2024-07-27 00:57:09,728 - DEBUG - The initial number of nodes: 3
-2024-07-27 00:57:09,728 - DEBUG - The number of deleted nodes: 2
-2024-07-27 00:57:09,728 - DEBUG - The number of inserted nodes: 1
-2024-07-27 00:57:09,728 - INFO - proccessing "sub_graph_2" subgraph ...
-2024-07-27 00:57:09,728 - DEBUG - The initial number of nodes: 7
+2024-07-27 23:12:14,144 - DEBUG - File path: d:\work\codes\dot_parser\input\1.dot
+2024-07-27 23:12:14,646 - INFO - Original graph saved to: d:\work\codes\dot_parser\result\1.png
+2024-07-27 23:12:14,656 - INFO - proccessing "sub_graph_1" subgraph ...
+2024-07-27 23:12:14,656 - DEBUG - The initial number of nodes: 3
+2024-07-27 23:12:14,656 - DEBUG - The number of deleted nodes: 2
+2024-07-27 23:12:14,656 - DEBUG - The number of inserted nodes: 1
+2024-07-27 23:12:14,656 - INFO - proccessing "sub_graph_2" subgraph ...
+2024-07-27 23:12:14,656 - DEBUG - The initial number of nodes: 7
+2024-07-27 23:12:14,656 - DEBUG - The number of deleted nodes: 12
+2024-07-27 23:12:14,656 - DEBUG - The number of inserted nodes: 6
+2024-07-27 23:12:14,656 - INFO - proccessing root graph ...
+2024-07-27 23:12:14,656 - DEBUG - The initial number of nodes: 4
+2024-07-27 23:12:14,656 - DEBUG - The number of deleted nodes: 2
+2024-07-27 23:12:14,656 - DEBUG - The number of inserted nodes: 1
+2024-07-27 23:12:14,823 - INFO - Updated graph saved to: d:\work\codes\dot_parser\result\1_updated.png
+2024-07-27 23:12:14,823 - INFO - Updated DOT file saved to: d:\work\codes\dot_parser\result\1_updated.dot
