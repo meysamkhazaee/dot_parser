@@ -1,36 +1,36 @@
-2024-07-27 23:42:11,956 - DEBUG - File path: d:\work\codes\dot_parser\input\sample.dot
-2024-07-27 23:42:15,045 - INFO - Original graph saved to: d:\work\codes\dot_parser\result\sample.png
-2024-07-27 23:42:15,055 - INFO - proccessing "main" subgraph ...
-2024-07-27 23:42:15,055 - DEBUG - The initial number of nodes: 59
-2024-07-27 23:42:15,091 - DEBUG - The number of deleted nodes: 76
-2024-07-27 23:42:15,092 - DEBUG - The number of inserted nodes: 38
-2024-07-27 23:42:15,092 - INFO - proccessing "__CPROVER__start" subgraph ...
-2024-07-27 23:42:15,092 - DEBUG - The initial number of nodes: 8
-2024-07-27 23:42:15,098 - DEBUG - The number of deleted nodes: 14
-2024-07-27 23:42:15,098 - DEBUG - The number of inserted nodes: 7
-2024-07-27 23:42:15,098 - INFO - proccessing "__CPROVER_initialize" subgraph ...
-2024-07-27 23:42:15,099 - DEBUG - The initial number of nodes: 7
-2024-07-27 23:42:15,100 - DEBUG - The number of deleted nodes: 12
-2024-07-27 23:42:15,100 - DEBUG - The number of inserted nodes: 6
-2024-07-27 23:42:15,100 - INFO - proccessing "printf" subgraph ...
-2024-07-27 23:42:15,100 - DEBUG - The initial number of nodes: 1
-2024-07-27 23:42:15,100 - DEBUG - The number of deleted nodes: 0
-2024-07-27 23:42:15,100 - DEBUG - The number of inserted nodes: 0
-2024-07-27 23:42:15,100 - INFO - proccessing "atoi" subgraph ...
-2024-07-27 23:42:15,100 - DEBUG - The initial number of nodes: 1
-2024-07-27 23:42:15,100 - DEBUG - The number of deleted nodes: 0
-2024-07-27 23:42:15,100 - DEBUG - The number of inserted nodes: 0
-2024-07-27 23:42:15,100 - INFO - proccessing "fopen" subgraph ...
-2024-07-27 23:42:15,100 - DEBUG - The initial number of nodes: 1
-2024-07-27 23:42:15,100 - DEBUG - The number of deleted nodes: 0
-2024-07-27 23:42:15,100 - DEBUG - The number of inserted nodes: 0
-2024-07-27 23:42:15,100 - INFO - proccessing "__isoc99_fscanf" subgraph ...
-2024-07-27 23:42:15,100 - DEBUG - The initial number of nodes: 1
-2024-07-27 23:42:15,100 - DEBUG - The number of deleted nodes: 0
-2024-07-27 23:42:15,100 - DEBUG - The number of inserted nodes: 0
-2024-07-27 23:42:15,100 - INFO - proccessing root graph ...
-2024-07-27 23:42:15,100 - DEBUG - The initial number of nodes: 24
-2024-07-27 23:42:15,100 - DEBUG - The number of deleted nodes: 6
-2024-07-27 23:42:15,100 - DEBUG - The number of inserted nodes: 3
-2024-07-27 23:42:15,956 - INFO - Updated graph saved to: d:\work\codes\dot_parser\result\sample_updated.png
-2024-07-27 23:42:15,963 - INFO - Updated DOT file saved to: d:\work\codes\dot_parser\result\sample_updated.dot
+2024-07-27 23:51:24,745 - DEBUG - File path: d:\work\codes\dot_parser\input\sample.dot
+2024-07-27 23:51:29,493 - INFO - Original graph saved to: d:\work\codes\dot_parser\result\sample.png
+2024-07-27 23:51:29,519 - INFO - proccessing "main" subgraph ...
+2024-07-27 23:51:29,519 - DEBUG - The initial number of nodes: 59
+2024-07-27 23:51:29,549 - DEBUG - The number of deleted nodes: 76
+2024-07-27 23:51:29,549 - DEBUG - The number of inserted nodes: 38
+2024-07-27 23:51:29,549 - INFO - proccessing "__CPROVER__start" subgraph ...
+2024-07-27 23:51:29,549 - DEBUG - The initial number of nodes: 8
+2024-07-27 23:51:29,549 - DEBUG - The number of deleted nodes: 14
+2024-07-27 23:51:29,549 - DEBUG - The number of inserted nodes: 7
+2024-07-27 23:51:29,549 - INFO - proccessing "__CPROVER_initialize" subgraph ...
+2024-07-27 23:51:29,549 - DEBUG - The initial number of nodes: 7
+2024-07-27 23:51:29,549 - DEBUG - The number of deleted nodes: 12
+2024-07-27 23:51:29,549 - DEBUG - The number of inserted nodes: 6
+2024-07-27 23:51:29,549 - INFO - proccessing "printf" subgraph ...
+2024-07-27 23:51:29,549 - DEBUG - The initial number of nodes: 1
+2024-07-27 23:51:29,549 - DEBUG - The number of deleted nodes: 0
+2024-07-27 23:51:29,549 - DEBUG - The number of inserted nodes: 0
+2024-07-27 23:51:29,549 - INFO - proccessing "atoi" subgraph ...
+2024-07-27 23:51:29,549 - DEBUG - The initial number of nodes: 1
+2024-07-27 23:51:29,549 - DEBUG - The number of deleted nodes: 0
+2024-07-27 23:51:29,549 - DEBUG - The number of inserted nodes: 0
+2024-07-27 23:51:29,549 - INFO - proccessing "fopen" subgraph ...
+2024-07-27 23:51:29,549 - DEBUG - The initial number of nodes: 1
+2024-07-27 23:51:29,549 - DEBUG - The number of deleted nodes: 0
+2024-07-27 23:51:29,549 - DEBUG - The number of inserted nodes: 0
+2024-07-27 23:51:29,549 - INFO - proccessing "__isoc99_fscanf" subgraph ...
+2024-07-27 23:51:29,549 - DEBUG - The initial number of nodes: 1
+2024-07-27 23:51:29,549 - DEBUG - The number of deleted nodes: 0
+2024-07-27 23:51:29,549 - DEBUG - The number of inserted nodes: 0
+2024-07-27 23:51:29,549 - INFO - proccessing root graph ...
+2024-07-27 23:51:29,549 - DEBUG - The initial number of nodes: 24
+2024-07-27 23:51:29,563 - DEBUG - The number of deleted nodes: 6
+2024-07-27 23:51:29,564 - DEBUG - The number of inserted nodes: 3
+2024-07-27 23:51:30,819 - INFO - Updated graph saved to: d:\work\codes\dot_parser\result\sample_updated.png
+2024-07-27 23:51:30,819 - INFO - Updated DOT file saved to: d:\work\codes\dot_parser\result\sample_updated.dot
