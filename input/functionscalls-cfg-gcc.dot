@@ -1,0 +1,22 @@
+strict digraph "" {
+	node [fontname=sans,
+		height=0.1,
+		label="\N",
+		margin=0.07,
+		shape=box,
+		width=0.1
+	];
+	96	[end=105,
+		label="Start: 96; End: 105",
+		start=96,
+		target1=78];
+	78	[end=93,
+		label="Start: 78; End: 93",
+		start=78,
+		target1=106];
+	96 -> 78;
+	106	[end=123,
+		label="Start: 106; End: 123",
+		start=106];
+	78 -> 106;
+}
