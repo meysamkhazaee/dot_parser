@@ -79,9 +79,10 @@ class process_graph:
         inserted_node = 0
 
         # for node in graph.get_nodes():
-        for node in self.all_nodes:
+        idx = 0
+        while idx < len(self.all_nodes):
 
-            node_name = node.get_name()
+            node_name = self.all_nodes[idx].get_name()
             dst_of_node = [e.get_destination() for e in self.all_edges if e.get_source() == node_name]
             src_of_node = [e.get_source() for e in self.all_edges if e.get_destination() == node_name]
             
@@ -92,7 +93,7 @@ class process_graph:
                     continue
 
                 # Combine the nodes
-                child_of_src = [e.get_source() for e in self.all_edges if e.get_source() == src_of_node[0]]
+                child_of_src = [e.get_destination() for e in self.all_edges if e.get_source() == src_of_node[0]]
 
                 if len(child_of_src) != 1:
                     continue
@@ -101,14 +102,14 @@ class process_graph:
                 self.remove_edge_all_edges(src_of_node[0], node_name)
                 new_node_name = src_of_node[0] + "_" + node_name
                 source_node = [n for n in self.all_nodes if n.get_name() == src_of_node[0]]
-                node_content = f"{source_node[0].get_label()}\n{node.get_label()}".replace('"', '')
+                node_content = f"{source_node[0].get_label()}\n{self.all_nodes[idx].get_label()}".replace('"', '')
                 new_node = pydot.Node(new_node_name, label=node_content, shape='Mrecord' ,fontsize=22 ,color='red')
                 graph.add_node(new_node)
                 self.all_nodes.append(new_node)
                 inserted_node += 1
 
                 for dest in dst_of_node:
-                    new_edge = pydot.Edge(new_node, dest)
+                    new_edge = pydot.Edge(new_node.get_name(), dest)
                     graph.add_edge(new_edge)
                     self.all_edges.append(new_edge)
                     self.remove_edge_graph(graph, node_name, dest)
@@ -124,13 +125,15 @@ class process_graph:
                         self.remove_edge_all_edges(e.get_source(), e.get_destination())
                     
                 self.remove_node_graph(graph, node_name)
-                self.all_nodes.remove(node)
+                idx = idx - 1
+                self.all_nodes.remove(self.all_nodes[idx])
                 self.remove_node_graph(graph, src_of_node[0])
                 for node in self.all_nodes:
                     if node.get_name() == src_of_node[0]:
                         self.all_nodes.remove(node)
                         break
                 deleted_node += 2
+            idx = idx + 1
 
         self.logger.debug(f"The number of deleted nodes: {deleted_node}")
         self.logger.debug(f"The number of inserted nodes: {inserted_node}")
