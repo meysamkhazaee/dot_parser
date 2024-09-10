@@ -1,0 +1,6 @@
+2024-09-10 19:04:08,922 - INFO - graph saved to: /home/khazaee/repository/codes/personal/dot_parser/output/singlefunctionscalls-cfg-goto/singlefunctionscalls-cfg-goto.png
+2024-09-10 19:04:08,922 - DEBUG - The initial number of nodes: 0
+2024-09-10 19:04:08,923 - DEBUG - The number of deleted nodes: 32
+2024-09-10 19:04:08,923 - DEBUG - The number of inserted nodes: 16
+2024-09-10 19:04:08,964 - INFO - graph saved to: /home/khazaee/repository/codes/personal/dot_parser/output/singlefunctionscalls-cfg-goto/singlefunctionscalls-cfg-goto_updated.png
+2024-09-10 19:04:08,965 - INFO - Updated DOT file saved to: /home/khazaee/repository/codes/personal/dot_parser/output/singlefunctionscalls-cfg-goto/singlefunctionscalls-cfg-goto_updated.dot

@@ -24,10 +24,10 @@ class process_graph:
         self.root_graph = graphs[0]
 
         self.all_nodes = []
-        self.find_all_nodes(self.root_graph)
+        self.update_all_nodes(self.root_graph)
 
         self.all_edges = []
-        self.find_all_edges(self.root_graph)
+        self.update_all_edges(self.root_graph)
 
     def return_nodes(self, graph):
         nodes = []
@@ -35,7 +35,7 @@ class process_graph:
             nodes.append(node)
         return nodes
 
-    def find_all_nodes(self, graph):
+    def update_all_nodes(self, graph):
         self.all_nodes += self.return_nodes(graph)
         for sub_graph in graph.get_subgraphs():
             self.all_nodes += self.return_nodes(sub_graph)
@@ -46,7 +46,7 @@ class process_graph:
             edges.append(edge)
         return edges
     
-    def find_all_edges(self, graph):
+    def update_all_edges(self, graph):
         self.all_edges += self.return_edges(graph)
         for sub_graph in graph.get_subgraphs():
             self.all_edges += self.return_edges(sub_graph)
@@ -59,13 +59,10 @@ class process_graph:
         for subgraph in graph.get_subgraphs():
             self.remove_edge_graph(subgraph, source_node_name, destination_node_name)
 
-    def remove_edge_all_edges(self, source_node_name, destination_node_name):
-        for e in self.all_edges:
-            if e.get_source() == source_node_name and e.get_destination() == destination_node_name:
-                self.all_edges.remove(e)
-
     def remove_node_graph(self, graph, node_name):
-        graph.del_node(node_name)
+        for node in graph.get_nodes():
+            if node.get_name() == node_name:
+                graph.del_node(node)
 
         for subgraph in graph.get_subgraphs():
             self.remove_node_graph(subgraph, node_name)
@@ -90,16 +87,17 @@ class process_graph:
                 
                 # check updated graph changes during loop itrations to prevdent bug.
                 if src_of_node[0] in dst_of_node:
+                    idx = idx + 1
                     continue
 
                 # Combine the nodes
                 child_of_src = [e.get_destination() for e in self.all_edges if e.get_source() == src_of_node[0]]
 
                 if len(child_of_src) != 1:
+                    idx = idx + 1
                     continue
 
                 self.remove_edge_graph(graph, src_of_node[0], node_name)
-                self.remove_edge_all_edges(src_of_node[0], node_name)
                 new_node_name = src_of_node[0] + "_" + node_name
                 source_node = [n for n in self.all_nodes if n.get_name() == src_of_node[0]]
                 node_content = f"{source_node[0].get_label()}\n{self.all_nodes[idx].get_label()}".replace('"', '')
@@ -113,7 +111,6 @@ class process_graph:
                     graph.add_edge(new_edge)
                     self.all_edges.append(new_edge)
                     self.remove_edge_graph(graph, node_name, dest)
-                    self.remove_edge_all_edges(node_name, dest)
 
                 # update edges
                 for e in self.all_edges:
@@ -122,16 +119,14 @@ class process_graph:
                         graph.add_edge(new_edge)
                         self.all_edges.append(new_edge)
                         self.remove_edge_graph(graph, e.get_source(), e.get_destination())
-                        self.remove_edge_all_edges(e.get_source(), e.get_destination())
                     
                 self.remove_node_graph(graph, node_name)
                 idx = idx - 1
-                self.all_nodes.remove(self.all_nodes[idx])
                 self.remove_node_graph(graph, src_of_node[0])
-                for node in self.all_nodes:
-                    if node.get_name() == src_of_node[0]:
-                        self.all_nodes.remove(node)
-                        break
+                self.all_nodes = []
+                self.update_all_nodes(graph)
+                self.all_edges = []
+                self.update_all_edges(graph)
                 deleted_node += 2
             idx = idx + 1
 

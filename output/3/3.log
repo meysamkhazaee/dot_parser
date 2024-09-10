@@ -1,0 +1,6 @@
+2024-09-10 18:53:45,546 - INFO - graph saved to: /home/khazaee/repository/codes/personal/dot_parser/output/3/3.png
+2024-09-10 18:53:45,546 - DEBUG - The initial number of nodes: 4
+2024-09-10 18:53:45,547 - DEBUG - The number of deleted nodes: 16
+2024-09-10 18:53:45,547 - DEBUG - The number of inserted nodes: 8
+2024-09-10 18:53:45,569 - INFO - graph saved to: /home/khazaee/repository/codes/personal/dot_parser/output/3/3_updated.png
+2024-09-10 18:53:45,569 - INFO - Updated DOT file saved to: /home/khazaee/repository/codes/personal/dot_parser/output/3/3_updated.dot
