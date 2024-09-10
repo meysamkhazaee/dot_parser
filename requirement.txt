@@ -1,2 +1,0 @@
-pydot 3.0.1
-ipython 8.26.0
