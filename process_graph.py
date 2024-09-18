@@ -98,7 +98,8 @@ class process_graph:
                     continue
 
                 # ignore nodes that is in separate subgraphs 
-                if False == self.are_nodes_in_same_subgraph(src_of_node[0],node_name, graph):
+                are_same_subgraph, target_subgraph = self.are_nodes_in_same_subgraph(src_of_node[0],node_name, graph)
+                if not are_same_subgraph:
                     idx = idx + 1
                     continue
 
@@ -107,7 +108,7 @@ class process_graph:
                 source_node = [n for n in self.all_nodes if n.get_name() == src_of_node[0]]
                 node_content = f"{source_node[0].get_label()}\n{self.all_nodes[idx].get_label()}".replace('"', '')
                 new_node = pydot.Node(new_node_name, label=node_content, shape='Mrecord' ,fontsize=22 ,color='red')
-                graph.add_node(new_node)
+                target_subgraph.add_node(new_node)
                 self.all_nodes.append(new_node)
                 inserted_node += 1
 
@@ -126,8 +127,14 @@ class process_graph:
                         self.remove_edge_graph(graph, e.get_source(), e.get_destination())
 
                 self.remove_node_graph(graph, node_name)
-                idx = idx - 1
+                idx -= 1
+                for node in self.all_nodes:
+                    if node.get_name() == src_of_node[0]:
+                        if idx >= self.all_nodes.index(node):
+                            idx -= 1
+               
                 self.remove_node_graph(graph, src_of_node[0])
+
                 self.all_nodes = []
                 self.update_all_nodes(graph)
                 self.all_edges = []
@@ -158,7 +165,8 @@ class process_graph:
                 source_node = edge.get_source()
                 child_of_src = [e.get_destination() for e in self.all_edges if e.get_source() == source_node]
                 destination_node = edge.get_destination()
-                child_of_src.remove(destination_node)
+                if destination_node in child_of_src:
+                    child_of_src.remove(destination_node)
                 
                 # Step 3: Find the corresponding subgraph
                 for subgraph in graph.get_subgraphs():
@@ -171,15 +179,14 @@ class process_graph:
                             last_node_subgraph = subgraph_nodes[-1].get_name()  # Last node
 
                             # Step 5: Find edges that end at destination_node and reconnect them to first_node_subgraph
-                            for e in self.all_edges:
-                                if e.get_destination() == destination_node:
-                                    new_edge = pydot.Edge(e.get_source(), first_node_subgraph)
+                            if edge.get_destination() == destination_node:
+                                new_edge = pydot.Edge(edge.get_source(), first_node_subgraph, color='blue')
+                                graph.add_edge(new_edge)
+                                self.remove_edge_graph(graph, edge.get_source(), destination_node)
+                                for child in child_of_src:
+                                    new_edge = pydot.Edge(last_node_subgraph, child, color='blue')
                                     graph.add_edge(new_edge)
-                                    self.remove_edge_graph(graph, e.get_source(), destination_node)
-                                    for child in child_of_src:
-                                        new_edge = pydot.Edge(last_node_subgraph, child)
-                                        graph.add_edge(new_edge)
-                                        self.remove_edge_graph(graph, e.get_source(), child)
+                                    self.remove_edge_graph(graph, edge.get_source(), child)
 
                             self.all_edges = []
                             self.update_all_edges(graph)
@@ -202,6 +209,6 @@ class process_graph:
             
             # Check if both nodes are in the current subgraph
             if node1 in subgraph_nodes and node2 in subgraph_nodes:
-                return True
+                return True, subgraph
         
-        return False
+        return False, None

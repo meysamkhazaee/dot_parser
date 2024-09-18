@@ -1,6 +1,8 @@
-2024-09-10 19:04:32,612 - INFO - graph saved to: /home/khazaee/repository/codes/personal/dot_parser/output/multiplefunctionscalls-cfg-goto/multiplefunctionscalls-cfg-goto.png
-2024-09-10 19:04:32,612 - DEBUG - The initial number of nodes: 0
-2024-09-10 19:04:32,613 - DEBUG - The number of deleted nodes: 40
-2024-09-10 19:04:32,613 - DEBUG - The number of inserted nodes: 20
-2024-09-10 19:04:32,667 - INFO - graph saved to: /home/khazaee/repository/codes/personal/dot_parser/output/multiplefunctionscalls-cfg-goto/multiplefunctionscalls-cfg-goto_updated.png
-2024-09-10 19:04:32,667 - INFO - Updated DOT file saved to: /home/khazaee/repository/codes/personal/dot_parser/output/multiplefunctionscalls-cfg-goto/multiplefunctionscalls-cfg-goto_updated.dot
+2024-09-18 12:48:26,677 - INFO - graph saved to: d:\work\codes\dot_parser\output/multiplefunctionscalls-cfg-goto\multiplefunctionscalls-cfg-goto.png
+2024-09-18 12:48:26,851 - INFO - graph saved to: d:\work\codes\dot_parser\output/multiplefunctionscalls-cfg-goto\multiplefunctionscalls-cfg-goto_updated1.png
+2024-09-18 12:48:26,854 - INFO - Updated DOT file saved to: d:\work\codes\dot_parser\output/multiplefunctionscalls-cfg-goto\multiplefunctionscalls-cfg-goto_updated1.dot
+2024-09-18 12:48:26,854 - DEBUG - The initial number of nodes: 0
+2024-09-18 12:48:26,860 - DEBUG - The number of deleted nodes: 40
+2024-09-18 12:48:26,860 - DEBUG - The number of inserted nodes: 20
+2024-09-18 12:48:26,981 - INFO - graph saved to: d:\work\codes\dot_parser\output/multiplefunctionscalls-cfg-goto\multiplefunctionscalls-cfg-goto_updated2.png
+2024-09-18 12:48:26,981 - INFO - Updated DOT file saved to: d:\work\codes\dot_parser\output/multiplefunctionscalls-cfg-goto\multiplefunctionscalls-cfg-goto_updated2.dot

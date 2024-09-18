@@ -7,31 +7,15 @@ size="30,40";
 ratio=compress;
 subgraph "cluster_main" {
 label="main";
-Node_0_4 [shape=Mrecord, fontsize=22, label="x=func1(y);"];
-Node_0_11 [shape=Mrecord, fontsize=22, label="End of Function"];
+Node_0_0_Node_0_1_Node_0_2_Node_0_3_Node_0_4 [label="signed int x;\nx = 0;\nsigned int y;\ny = 12;\nx=func1(y);", shape=Mrecord, fontsize=22, color=red];
+Node_0_5_Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11 [label="x = x + 1;\ny = x - 1;\nreturn x + y;\nDead\nDead\nGoto\nEnd of Function", shape=Mrecord, fontsize=22, color=red];
 }
 
 subgraph "cluster_func1" {
 label="func1";
-Node_1_18 [shape=Mrecord, fontsize=22, label="End of Function"];
+Node_1_12_Node_1_13_Node_1_14_Node_1_15_Node_1_16_Node_1_17_Node_1_18 [label="signed int y1;\ny1 = x1 + 3;\ny1 = y1 + 1;\nreturn y1;\nDead\nGoto\nEnd of Function", shape=Mrecord, fontsize=22, color=red];
 }
 
-Node_0_0_Node_0_1 [label="signed int x;\nx = 0;", shape=Mrecord, fontsize=22, color=red];
-Node_0_2_Node_0_3 [label="signed int y;\ny = 12;", shape=Mrecord, fontsize=22, color=red];
-Node_0_2_Node_0_3 -> Node_0_4;
-Node_0_0_Node_0_1 -> Node_0_2_Node_0_3;
-Node_0_5_Node_0_6 [label="x = x + 1;\ny = x - 1;", shape=Mrecord, fontsize=22, color=red];
-Node_1_18 -> Node_0_5_Node_0_6;
-Node_0_7_Node_0_8 [label="return x + y;\nDead", shape=Mrecord, fontsize=22, color=red];
-Node_0_5_Node_0_6 -> Node_0_7_Node_0_8;
-Node_0_9_Node_0_10 [label="Dead\nGoto", shape=Mrecord, fontsize=22, color=red];
-Node_0_9_Node_0_10 -> Node_0_11;
-Node_0_7_Node_0_8 -> Node_0_9_Node_0_10;
-Node_1_12_Node_1_13 [label="signed int y1;\ny1 = x1 + 3;", shape=Mrecord, fontsize=22, color=red];
-Node_0_4 -> Node_1_12_Node_1_13;
-Node_1_14_Node_1_15 [label="y1 = y1 + 1;\nreturn y1;", shape=Mrecord, fontsize=22, color=red];
-Node_1_12_Node_1_13 -> Node_1_14_Node_1_15;
-Node_1_16_Node_1_17 [label="Dead\nGoto", shape=Mrecord, fontsize=22, color=red];
-Node_1_16_Node_1_17 -> Node_1_18;
-Node_1_14_Node_1_15 -> Node_1_16_Node_1_17;
+Node_1_12_Node_1_13_Node_1_14_Node_1_15_Node_1_16_Node_1_17_Node_1_18 -> Node_0_5_Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11;
+Node_0_0_Node_0_1_Node_0_2_Node_0_3_Node_0_4 -> Node_1_12_Node_1_13_Node_1_14_Node_1_15_Node_1_16_Node_1_17_Node_1_18;
 }
