@@ -1,0 +1,53 @@
+digraph G {
+color=black;
+orientation=portrait;
+fontsize=20;
+compound=true;
+size="30,40";
+ratio=compress;
+subgraph "cluster_main" {
+label="main";
+Node_0_0 [shape=Mrecord, fontsize=22, label="signed int x;"];
+Node_0_0 -> Node_0_1;
+Node_0_1 [shape=Mrecord, fontsize=22, label="x = 0;"];
+Node_0_1 -> Node_0_2;
+Node_0_2 [shape=Mrecord, fontsize=22, label="signed int y;"];
+Node_0_2 -> Node_0_3;
+Node_0_3 [shape=Mrecord, fontsize=22, label="y = 12;"];
+Node_0_3 -> Node_0_4;
+Node_0_4 [shape=Mrecord, fontsize=22, label="x=func1(y);"];
+Node_0_5 [shape=Mrecord, fontsize=22, label="x = x + 1;"];
+Node_0_5 -> Node_0_6;
+Node_0_6 [shape=Mrecord, fontsize=22, label="y = x - 1;"];
+Node_0_6 -> Node_0_7;
+Node_0_7 [shape=Mrecord, fontsize=22, label="return x + y;"];
+Node_0_7 -> Node_0_8;
+Node_0_8 [shape=Mrecord, fontsize=22, label="Dead"];
+Node_0_8 -> Node_0_9;
+Node_0_9 [shape=Mrecord, fontsize=22, label="Dead"];
+Node_0_9 -> Node_0_10;
+Node_0_10 [shape=Mrecord, fontsize=22, label="Goto"];
+Node_0_10 -> Node_0_11;
+Node_0_11 [shape=Mrecord, fontsize=22, label="End of Function"];
+}
+
+subgraph "cluster_func1" {
+label="func1";
+Node_1_12 [shape=Mrecord, fontsize=22, label="signed int y1;"];
+Node_1_12 -> Node_1_13;
+Node_1_13 [shape=Mrecord, fontsize=22, label="y1 = x1 + 3;"];
+Node_1_13 -> Node_1_14;
+Node_1_14 [shape=Mrecord, fontsize=22, label="y1 = y1 + 1;"];
+Node_1_14 -> Node_1_15;
+Node_1_15 [shape=Mrecord, fontsize=22, label="return y1;"];
+Node_1_15 -> Node_1_16;
+Node_1_16 [shape=Mrecord, fontsize=22, label="Dead"];
+Node_1_16 -> Node_1_17;
+Node_1_17 [shape=Mrecord, fontsize=22, label="Goto"];
+Node_1_17 -> Node_1_18;
+Node_1_18 [shape=Mrecord, fontsize=22, label="End of Function"];
+}
+
+Node_0_4 -> Node_1_12;
+Node_1_18 -> Node_0_5;
+}

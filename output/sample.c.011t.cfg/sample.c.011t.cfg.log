@@ -1,0 +1,6 @@
+2024-09-10 22:30:48,066 - INFO - graph saved to: d:\work\codes\dot_parser\output/sample.c.011t.cfg\sample.c.011t.cfg.png
+2024-09-10 22:30:48,066 - DEBUG - The initial number of nodes: 0
+2024-09-10 22:30:48,066 - DEBUG - The number of deleted nodes: 0
+2024-09-10 22:30:48,066 - DEBUG - The number of inserted nodes: 0
+2024-09-10 22:30:48,700 - INFO - graph saved to: d:\work\codes\dot_parser\output/sample.c.011t.cfg\sample.c.011t.cfg_updated.png
+2024-09-10 22:30:48,706 - INFO - Updated DOT file saved to: d:\work\codes\dot_parser\output/sample.c.011t.cfg\sample.c.011t.cfg_updated.dot

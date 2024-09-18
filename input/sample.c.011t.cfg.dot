@@ -1,0 +1,206 @@
+digraph "sample.c.011t.cfg" {
+overlap=false;
+subgraph "cluster_main" {
+	style="dashed";
+	color="black";
+	label="main ()";
+	fn_14_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_14_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_14_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 2\>:\l\
+|D.2280\ =\ *argv;\l\
+|printf\ (\"Program\ name:\ %s\n\",\ D.2280);\l\
+|if\ (argc\ \<=\ 1)\l\
+\ \ goto\ \<bb\ 3\>;\l\
+else\l\
+\ \ goto\ \<bb\ 4\>;\l\
+}"];
+
+	fn_14_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 3\>:\l\
+|D.2283\ =\ *argv;\l\
+|printf\ (\"Usage:\ %s\ .not\ input\n\",\ D.2283);\l\
+|D.2284\ =\ 1;\l\
+goto\ \<bb\ 20\>;\l\
+}"];
+
+	fn_14_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 4\>:\l\
+|if\ (argc\ ==\ 2)\l\
+\ \ goto\ \<bb\ 5\>;\l\
+else\l\
+\ \ goto\ \<bb\ 6\>;\l\
+}"];
+
+	fn_14_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 5\>:\l\
+|D.2287\ =\ argc\ +\ -1;\l\
+|printf\ (\"Number\ of\ arguments:\ %d\nRead\ From\ File\n\",\ D.2287);\l\
+|D.2288\ =\ argv\ +\ 4;\l\
+|D.2289\ =\ *D.2288;\l\
+|fptr\ =\ fopen\ (D.2289,\ \"r\");\l\
+|fscanf\ (fptr,\ \"%d\",\ &num1);\l\
+|fscanf\ (fptr,\ \"%d\",\ &num2);\l\
+|fscanf\ (fptr,\ \"%d\",\ &num3);\l\
+goto\ \<bb\ 9\>;\l\
+}"];
+
+	fn_14_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 6\>:\l\
+|if\ (argc\ ==\ 4)\l\
+\ \ goto\ \<bb\ 7\>;\l\
+else\l\
+\ \ goto\ \<bb\ 8\>;\l\
+}"];
+
+	fn_14_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 7\>:\l\
+|D.2293\ =\ argv\ +\ 4;\l\
+|D.2294\ =\ *D.2293;\l\
+|num1.0\ =\ atoi\ (D.2294);\l\
+|num1\ =\ num1.0;\l\
+|D.2296\ =\ argv\ +\ 8;\l\
+|D.2297\ =\ *D.2296;\l\
+|num2.1\ =\ atoi\ (D.2297);\l\
+|num2\ =\ num2.1;\l\
+|D.2299\ =\ argv\ +\ 12;\l\
+|D.2300\ =\ *D.2299;\l\
+|num3.2\ =\ atoi\ (D.2300);\l\
+|num3\ =\ num3.2;\l\
+goto\ \<bb\ 9\>;\l\
+}"];
+
+	fn_14_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 8\>:\l\
+|__builtin_puts\ (&\"Invalid\ number\ of\ arguments.\ Please\ provide\ three\ numbers.\"[0]);\l\
+|D.2284\ =\ 1;\l\
+goto\ \<bb\ 20\>;\l\
+}"];
+
+	fn_14_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 9\>:\l\
+|num1.3\ =\ num1;\l\
+|num2.4\ =\ num2;\l\
+|if\ (num1.3\ \>\ num2.4)\l\
+\ \ goto\ \<bb\ 10\>;\l\
+else\l\
+\ \ goto\ \<bb\ 11\>;\l\
+}"];
+
+	fn_14_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 10\>:\l\
+|num2.5\ =\ num2;\l\
+|num1.6\ =\ num1;\l\
+|printf\ (\"num1\ =\ %d\ is\ greater\ than\ num2\ =\ %d.\n\",\ num1.6,\ num2.5);\l\
+goto\ \<bb\ 14\>;\l\
+}"];
+
+	fn_14_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 11\>:\l\
+|num1.7\ =\ num1;\l\
+|num2.8\ =\ num2;\l\
+|if\ (num1.7\ \<\ num2.8)\l\
+\ \ goto\ \<bb\ 12\>;\l\
+else\l\
+\ \ goto\ \<bb\ 13\>;\l\
+}"];
+
+	fn_14_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 12\>:\l\
+|num2.9\ =\ num2;\l\
+|num1.10\ =\ num1;\l\
+|printf\ (\"num1\ =\ %d\ is\ less\ than\ num2\ =\ %d.\n\",\ num1.10,\ num2.9);\l\
+goto\ \<bb\ 14\>;\l\
+}"];
+
+	fn_14_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 13\>:\l\
+|__builtin_puts\ (&\"Both\ numbers\ are\ equal.\"[0]);\l\
+}"];
+
+	fn_14_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 14\>:\l\
+|num3.11\ =\ num3;\l\
+|if\ (num3.11\ \>\ 0)\l\
+\ \ goto\ \<bb\ 15\>;\l\
+else\l\
+\ \ goto\ \<bb\ 16\>;\l\
+}"];
+
+	fn_14_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 15\>:\l\
+|num3.12\ =\ num3;\l\
+|printf\ (\"%d\ is\ positive.\n\",\ num3.12);\l\
+goto\ \<bb\ 19\>;\l\
+}"];
+
+	fn_14_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 16\>:\l\
+|num3.13\ =\ num3;\l\
+|if\ (num3.13\ \<\ 0)\l\
+\ \ goto\ \<bb\ 17\>;\l\
+else\l\
+\ \ goto\ \<bb\ 18\>;\l\
+}"];
+
+	fn_14_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 17\>:\l\
+|num3.14\ =\ num3;\l\
+|printf\ (\"%d\ is\ negative.\n\",\ num3.14);\l\
+goto\ \<bb\ 19\>;\l\
+}"];
+
+	fn_14_basic_block_18 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 18\>:\l\
+|num3.15\ =\ num3;\l\
+|printf\ (\"%d\ is\ zero.\n\",\ num3.15);\l\
+}"];
+
+	fn_14_basic_block_19 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 19\>:\l\
+|D.2284\ =\ 0;\l\
+}"];
+
+	fn_14_basic_block_20 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 20\>:\l\
+|num1\ =\ \{CLOBBER\};\l\
+|num2\ =\ \{CLOBBER\};\l\
+|num3\ =\ \{CLOBBER\};\l\
+}"];
+
+	fn_14_basic_block_21 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 21\>:\l\
+|\<L21\>:\l\
+|return\ D.2284;\l\
+}"];
+
+	fn_14_basic_block_0:s -> fn_14_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_2:s -> fn_14_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_2:s -> fn_14_basic_block_4:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_3:s -> fn_14_basic_block_20:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_4:s -> fn_14_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_4:s -> fn_14_basic_block_6:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_5:s -> fn_14_basic_block_9:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_6:s -> fn_14_basic_block_7:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_6:s -> fn_14_basic_block_8:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_7:s -> fn_14_basic_block_9:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_8:s -> fn_14_basic_block_20:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_9:s -> fn_14_basic_block_10:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_9:s -> fn_14_basic_block_11:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_10:s -> fn_14_basic_block_14:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_11:s -> fn_14_basic_block_12:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_11:s -> fn_14_basic_block_13:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_12:s -> fn_14_basic_block_14:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_13:s -> fn_14_basic_block_14:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_14:s -> fn_14_basic_block_15:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_14:s -> fn_14_basic_block_16:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_15:s -> fn_14_basic_block_19:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_16:s -> fn_14_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_16:s -> fn_14_basic_block_18:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_17:s -> fn_14_basic_block_19:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_18:s -> fn_14_basic_block_19:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_19:s -> fn_14_basic_block_20:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_20:s -> fn_14_basic_block_21:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_14_basic_block_21:s -> fn_14_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_14_basic_block_0:s -> fn_14_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster__GLOBAL__sub_I_65535_0_main" {
+	style="dashed";
+	color="black";
+	label="_GLOBAL__sub_I_65535_0_main ()";
+	fn_15_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_15_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_15_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 2\>:\l\
+|__gcov_init\ (&*LPBX0);\l\
+|return;\l\
+}"];
+
+	fn_15_basic_block_0:s -> fn_15_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_15_basic_block_2:s -> fn_15_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_15_basic_block_0:s -> fn_15_basic_block_1:n [style="invis",constraint=true];
+}
+}

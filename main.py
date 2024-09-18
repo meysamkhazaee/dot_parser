@@ -28,16 +28,25 @@ def main():
     original_png_path = os.path.join(output_dir, f'{file_name}.png')
     process_obj.generate_png(original_png_path)
 
+    # Save the  optimized graph as a PNG file
+    process_obj.handle_function_call_subgraph(process_obj.root_graph)
+
+    updated1_png_path = os.path.join(output_dir, f'{file_name}_updated1.png')
+    process_obj.generate_png(updated1_png_path)
+
+    updated1_dot_path = os.path.join(output_dir, f'{file_name}_updated1.dot')
+    process_obj.generate_dot(updated1_dot_path)
+
     # Process input graph
     process_obj.combine_consecutive_nodes(process_obj.root_graph)
     
     # Save the updated graph as a PNG file
-    updated_png_path = os.path.join(output_dir, f'{file_name}_updated.png')
-    process_obj.generate_png(updated_png_path)
+    updated2_png_path = os.path.join(output_dir, f'{file_name}_updated2.png')
+    process_obj.generate_png(updated2_png_path)
     
     # Save the updated graph as a DOT file
-    updated_dot_path = os.path.join(output_dir, f'{file_name}_updated.dot')
-    process_obj.generate_dot(updated_dot_path)
+    updated2_dot_path = os.path.join(output_dir, f'{file_name}_updated2.dot')
+    process_obj.generate_dot(updated2_dot_path)
 
 if __name__ == "__main__":
     main()
