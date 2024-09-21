@@ -1,0 +1,8 @@
+2024-09-21 10:55:55,408 - INFO - graph saved to: D:\work\codes\dot_parser\output/unknownaddresses-cfg-goto\unknownaddresses-cfg-goto.png
+2024-09-21 10:55:55,613 - INFO - graph saved to: D:\work\codes\dot_parser\output/unknownaddresses-cfg-goto\unknownaddresses-cfg-goto_updated1.png
+2024-09-21 10:55:55,628 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/unknownaddresses-cfg-goto\unknownaddresses-cfg-goto_updated1.dot
+2024-09-21 10:55:55,628 - DEBUG - The initial number of nodes: 0
+2024-09-21 10:55:55,628 - DEBUG - The number of deleted nodes: 36
+2024-09-21 10:55:55,628 - DEBUG - The number of inserted nodes: 18
+2024-09-21 10:55:55,894 - INFO - graph saved to: D:\work\codes\dot_parser\output/unknownaddresses-cfg-goto\unknownaddresses-cfg-goto_updated2.png
+2024-09-21 10:55:55,894 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/unknownaddresses-cfg-goto\unknownaddresses-cfg-goto_updated2.dot

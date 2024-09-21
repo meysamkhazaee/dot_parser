@@ -1,0 +1,64 @@
+digraph G {
+color=black;
+orientation=portrait;
+fontsize=20;
+compound=true;
+size="30,40";
+ratio=compress;
+subgraph "cluster_main" {
+label="main";
+Node_0_0 [shape=Mrecord, fontsize=22, label="uint32_t x;"];
+Node_0_0 -> Node_0_1;
+Node_0_1 [shape=Mrecord, fontsize=22, label="x = (uint32_t)10;"];
+Node_0_1 -> Node_0_2;
+Node_0_2 [shape=Mrecord, fontsize=22, label="uint32_t * const a;"];
+Node_0_2 -> Node_0_3;
+Node_0_3 [shape=Mrecord, fontsize=22, label="signed int return_value_rand;"];
+Node_0_3 -> Node_0_4;
+Node_0_4 [shape=Mrecord, fontsize=22, label="return_value_rand=rand();"];
+Node_0_5 [shape=Mrecord, fontsize=22, label="a = (uint32_t *)(0x10000 + return_value_rand % 0x5000);"];
+Node_0_5 -> Node_0_6;
+Node_0_6 [shape=Mrecord, fontsize=22, label="uint32_t * const b;"];
+Node_0_6 -> Node_0_7;
+Node_0_7 [shape=Mrecord, fontsize=22, label="b = &x;"];
+Node_0_7 -> Node_0_8;
+Node_0_8 [shape=Mrecord, fontsize=22, label="*axi_ptr = (uint64_t)*a;"];
+Node_0_8 -> Node_0_9;
+Node_0_9 [shape=Mrecord, fontsize=22, label="*a = (uint32_t)120;"];
+Node_0_9 -> Node_0_10;
+Node_0_10 [shape=Mrecord, fontsize=22, label="*a = *b;"];
+Node_0_10 -> Node_0_11;
+Node_0_11 [shape=diamond, fontsize=22, label="!(x \> (uint32_t)5)?"];
+Node_0_11 -> Node_0_14 [fontsize=20, label="true"];
+Node_0_11 -> Node_0_12 [fontsize=20, label="false"];
+Node_0_14 [shape=Mrecord, fontsize=22, label="*a = *a + 1u;"];
+Node_0_14 -> Node_0_15;
+Node_0_12 [shape=Mrecord, fontsize=22, label="*a = (unsigned int)100 * *ring_ptr;"];
+Node_0_12 -> Node_0_13;
+Node_0_15 [shape=Mrecord, fontsize=22, label="Skip"];
+Node_0_15 -> Node_0_16;
+Node_0_13 [shape=Mrecord, fontsize=22, label="Goto"];
+Node_0_13 -> Node_0_15;
+Node_0_16 [shape=Mrecord, fontsize=22, label="return (signed int)x;"];
+Node_0_16 -> Node_0_17;
+Node_0_17 [shape=Mrecord, fontsize=22, label="Dead"];
+Node_0_17 -> Node_0_18;
+Node_0_18 [shape=Mrecord, fontsize=22, label="Dead"];
+Node_0_18 -> Node_0_19;
+Node_0_19 [shape=Mrecord, fontsize=22, label="Dead"];
+Node_0_19 -> Node_0_20;
+Node_0_20 [shape=Mrecord, fontsize=22, label="Dead"];
+Node_0_20 -> Node_0_21;
+Node_0_21 [shape=Mrecord, fontsize=22, label="Goto"];
+Node_0_21 -> Node_0_22;
+Node_0_22 [shape=Mrecord, fontsize=22, label="End of Function"];
+}
+
+subgraph "cluster_rand" {
+rank=sink;
+label="rand";
+Node_1_0 [shape=Mrecord, fontsize=22, label="?"];
+}
+
+Node_1_0 -> Node_0_5 [color=blue];
+}

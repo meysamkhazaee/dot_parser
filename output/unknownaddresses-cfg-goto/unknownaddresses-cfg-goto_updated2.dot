@@ -1,0 +1,28 @@
+digraph G {
+color=black;
+orientation=portrait;
+fontsize=20;
+compound=true;
+size="30,40";
+ratio=compress;
+subgraph "cluster_main" {
+label="main";
+Node_0_14 [shape=Mrecord, fontsize=22, label="*a = *a + 1u;"];
+Node_0_0_Node_0_1_Node_0_2_Node_0_3_Node_0_4 [label="uint32_t x;\nx = (uint32_t)10;\nuint32_t * const a;\nsigned int return_value_rand;\nreturn_value_rand=rand();", shape=Mrecord, fontsize=22, color=red];
+Node_0_5_Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11 [label="a = (uint32_t *)(0x10000 + return_value_rand % 0x5000);\nuint32_t * const b;\nb = &x;\n*axi_ptr = (uint64_t)*a;\n*a = (uint32_t)120;\n*a = *b;\n!(x \> (uint32_t)5)?", shape=Mrecord, fontsize=22, color=red];
+Node_0_12_Node_0_13 [label="*a = (unsigned int)100 * *ring_ptr;\nGoto", shape=Mrecord, fontsize=22, color=red];
+Node_0_15_Node_0_16_Node_0_17_Node_0_18_Node_0_19_Node_0_20_Node_0_21_Node_0_22 [label="Skip\nreturn (signed int)x;\nDead\nDead\nDead\nDead\nGoto\nEnd of Function", shape=Mrecord, fontsize=22, color=red];
+}
+
+subgraph "cluster_rand" {
+rank=sink;
+label="rand";
+Node_1_0 [shape=Mrecord, fontsize=22, label="?"];
+}
+
+Node_0_5_Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11 -> Node_0_14;
+Node_1_0 -> Node_0_5_Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11;
+Node_0_5_Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11 -> Node_0_12_Node_0_13;
+Node_0_12_Node_0_13 -> Node_0_15_Node_0_16_Node_0_17_Node_0_18_Node_0_19_Node_0_20_Node_0_21_Node_0_22;
+Node_0_14 -> Node_0_15_Node_0_16_Node_0_17_Node_0_18_Node_0_19_Node_0_20_Node_0_21_Node_0_22;
+}

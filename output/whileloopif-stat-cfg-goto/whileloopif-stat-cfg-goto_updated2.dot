@@ -1,0 +1,32 @@
+digraph G {
+color=black;
+orientation=portrait;
+fontsize=20;
+compound=true;
+size="30,40";
+ratio=compress;
+subgraph "cluster_main" {
+label="main";
+Node_0_5 [shape=Mrecord, fontsize=22, label="y = 14;"];
+Node_0_15 [shape=diamond, fontsize=22, label="!(i \< limit)?"];
+Node_0_15 -> Node_0_16 [fontsize=20, label="false"];
+Node_0_16 [shape=diamond, fontsize=22, label="!(x \< y)?"];
+Node_0_0_Node_0_1_Node_0_2_Node_0_3_Node_0_4 [label="signed int x;\nx = 6;\nsigned int y;\ny = 12;\n!(y \> 14)?", shape=Mrecord, fontsize=22, color=red];
+Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11_Node_0_12_Node_0_13_Node_0_14 [label="Skip\nsigned int limit;\nlimit = x + y;\nsigned int p;\np = 0;\nsigned int q;\nq = 0;\nsigned int i;\ni = 0;", shape=Mrecord, fontsize=22, color=red];
+Node_0_19_Node_0_20 [label="q = q + 1;\np = p + 1;", shape=Mrecord, fontsize=22, color=red];
+Node_0_17_Node_0_18 [label="q = q + 1;\nGoto", shape=Mrecord, fontsize=22, color=red];
+Node_0_21_Node_0_22_Node_0_23 [label="Skip\ni = i + 1;\nGoto", shape=Mrecord, fontsize=22, color=red];
+Node_0_24_Node_0_25_Node_0_26_Node_0_27_Node_0_28_Node_0_29_Node_0_30_Node_0_31_Node_0_32_Node_0_33 [label="Skip\nreturn p + q;\nDead\nDead\nDead\nDead\nDead\nDead\nGoto\nEnd of Function", shape=Mrecord, fontsize=22, color=red];
+}
+
+Node_0_0_Node_0_1_Node_0_2_Node_0_3_Node_0_4 -> Node_0_5;
+Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11_Node_0_12_Node_0_13_Node_0_14 -> Node_0_15;
+Node_0_0_Node_0_1_Node_0_2_Node_0_3_Node_0_4 -> Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11_Node_0_12_Node_0_13_Node_0_14;
+Node_0_5 -> Node_0_6_Node_0_7_Node_0_8_Node_0_9_Node_0_10_Node_0_11_Node_0_12_Node_0_13_Node_0_14;
+Node_0_16 -> Node_0_19_Node_0_20;
+Node_0_16 -> Node_0_17_Node_0_18;
+Node_0_21_Node_0_22_Node_0_23 -> Node_0_15;
+Node_0_19_Node_0_20 -> Node_0_21_Node_0_22_Node_0_23;
+Node_0_17_Node_0_18 -> Node_0_21_Node_0_22_Node_0_23;
+Node_0_15 -> Node_0_24_Node_0_25_Node_0_26_Node_0_27_Node_0_28_Node_0_29_Node_0_30_Node_0_31_Node_0_32_Node_0_33;
+}

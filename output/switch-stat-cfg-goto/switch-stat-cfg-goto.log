@@ -1,0 +1,8 @@
+2024-09-21 11:06:11,017 - INFO - graph saved to: D:\work\codes\dot_parser\output/switch-stat-cfg-goto\switch-stat-cfg-goto.png
+2024-09-21 11:06:11,157 - INFO - graph saved to: D:\work\codes\dot_parser\output/switch-stat-cfg-goto\switch-stat-cfg-goto_updated1.png
+2024-09-21 11:06:11,157 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/switch-stat-cfg-goto\switch-stat-cfg-goto_updated1.dot
+2024-09-21 11:06:11,157 - DEBUG - The initial number of nodes: 0
+2024-09-21 11:06:11,173 - DEBUG - The number of deleted nodes: 42
+2024-09-21 11:06:11,173 - DEBUG - The number of inserted nodes: 21
+2024-09-21 11:06:11,298 - INFO - graph saved to: D:\work\codes\dot_parser\output/switch-stat-cfg-goto\switch-stat-cfg-goto_updated2.png
+2024-09-21 11:06:11,298 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/switch-stat-cfg-goto\switch-stat-cfg-goto_updated2.dot

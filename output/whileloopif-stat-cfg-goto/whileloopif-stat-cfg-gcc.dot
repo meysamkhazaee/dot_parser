@@ -1,0 +1,58 @@
+strict digraph "" {
+	node [fontname=sans,
+		height=0.1,
+		label="\N",
+		margin=0.07,
+		shape=box,
+		width=0.1
+	];
+	78	[end=88,
+		label="Start: 78; End: 88",
+		start=78,
+		target1=89,
+		target2=91];
+	89	[end=90,
+		label="Start: 89; End: 90",
+		start=89,
+		target1=91];
+	78 -> 89;
+	91	[end=99,
+		label="Start: 91; End: 99",
+		start=91,
+		target1=119];
+	78 -> 91;
+	89 -> 91;
+	119	[end=124,
+		label="Start: 119; End: 124",
+		start=119,
+		target1=125,
+		target2=100];
+	91 -> 119;
+	125	[end=133,
+		label="Start: 125; End: 133",
+		start=125];
+	119 -> 125;
+	100	[end=105,
+		label="Start: 100; End: 105",
+		start=100,
+		target1=106,
+		target2=110];
+	119 -> 100;
+	106	[end=109,
+		label="Start: 106; End: 109",
+		start=106,
+		target1=116];
+	100 -> 106;
+	110	[end=115,
+		label="Start: 110; End: 115",
+		start=110,
+		target1=116];
+	100 -> 110;
+	116	[end=118,
+		label="Start: 116; End: 118",
+		start=116,
+		target1=119];
+	106 -> 116;
+	116 -> 119;
+	110 -> 116;
+}
