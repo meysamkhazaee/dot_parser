@@ -107,7 +107,7 @@ class process_graph:
                 new_node_name = src_of_node[0] + "_" + node_name
                 source_node = [n for n in self.all_nodes if n.get_name() == src_of_node[0]]
                 node_content = f"{source_node[0].get_label()}\n{self.all_nodes[idx].get_label()}".replace('"', '')
-                new_node = pydot.Node(new_node_name, label=node_content, shape='Mrecord' ,fontsize=22 ,color='red')
+                new_node = pydot.Node(new_node_name, label=node_content, shape='plaintext' ,fontsize=22 ,color='red')
                 target_subgraph.add_node(new_node)
                 self.all_nodes.append(new_node)
                 inserted_node += 1
