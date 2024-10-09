@@ -1,0 +1,8 @@
+2024-10-10 00:43:17,132 - INFO - graph saved to: D:\work\codes\dot_parser\output/2\2.png
+2024-10-10 00:43:17,133 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/2\2_updated1.dot
+2024-10-10 00:43:17,293 - INFO - graph saved to: D:\work\codes\dot_parser\output/2\2_updated1.png
+2024-10-10 00:43:17,293 - DEBUG - The initial number of nodes: 4
+2024-10-10 00:43:17,295 - DEBUG - The number of deleted nodes: 14
+2024-10-10 00:43:17,295 - DEBUG - The number of inserted nodes: 7
+2024-10-10 00:43:17,295 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/2\2_updated2.dot
+2024-10-10 00:43:17,478 - INFO - graph saved to: D:\work\codes\dot_parser\output/2\2_updated2.png

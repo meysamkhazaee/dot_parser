@@ -48,6 +48,6 @@ Node_1_17 -> Node_1_18;
 Node_1_18 [shape=Mrecord, fontsize=22, label="End of Function"];
 }
 
-Node_0_4 -> Node_1_12;
-Node_1_18 -> Node_0_5;
+Node_0_4 -> Node_1_12 [color=blue];
+Node_1_18 -> Node_0_5 [color=blue];
 }

@@ -1,8 +1,8 @@
-2024-09-27 10:15:49,209 - INFO - graph saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto.png
-2024-09-27 10:15:49,224 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto_updated1.dot
-2024-09-27 10:15:49,791 - INFO - graph saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto_updated1.png
-2024-09-27 10:15:49,791 - DEBUG - The initial number of nodes: 0
-2024-09-27 10:15:49,838 - DEBUG - The number of deleted nodes: 130
-2024-09-27 10:15:49,838 - DEBUG - The number of inserted nodes: 65
-2024-09-27 10:15:49,838 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto_updated2.dot
-2024-09-27 10:15:50,244 - INFO - graph saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto_updated2.png
+2024-10-10 00:42:51,006 - INFO - graph saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto.png
+2024-10-10 00:42:51,021 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto_updated1.dot
+2024-10-10 00:42:51,685 - INFO - graph saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto_updated1.png
+2024-10-10 00:42:51,685 - DEBUG - The initial number of nodes: 0
+2024-10-10 00:42:51,735 - DEBUG - The number of deleted nodes: 130
+2024-10-10 00:42:51,735 - DEBUG - The number of inserted nodes: 65
+2024-10-10 00:42:51,735 - INFO - Updated DOT file saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto_updated2.dot
+2024-10-10 00:42:52,228 - INFO - graph saved to: D:\work\codes\dot_parser\output/nestedforloopfunctionscalls-cfg-goto\nestedforloopfunctionscalls-cfg-goto_updated2.png

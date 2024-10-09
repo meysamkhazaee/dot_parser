@@ -1,0 +1,25 @@
+digraph G {
+A [label="A"];
+B [label="B"];
+C [label="C"];
+D [label="D"];
+A -> B;
+A -> C;
+B -> C;
+C -> D;
+D -> A;
+subgraph "sub_graph_1" {
+label="sub_graph_1";
+Node_3 [shape=Mrecord, fontsize=22, label="Node_3"];
+Node_1_Node_2 [label="Node_1\nNode_2", shape=plaintext, fontsize=22, color=red];
+}
+
+subgraph "sub_graph_2" {
+label="sub_graph_2";
+Node_67_Node_68_Node_69_Node_70_Node_71_Node_72_Node_73 [label="Node_67\nNode_68\nNode_69\nNode_70\nNode_71\nNode_72\nNode_73", shape=plaintext, fontsize=22, color=red];
+}
+
+Node_1_Node_2 -> Node_3;
+A -> Node_1_Node_2;
+Node_3 -> Node_1_Node_2;
+}
